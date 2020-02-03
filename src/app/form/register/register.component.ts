@@ -18,10 +18,18 @@ submit()
   ngOnInit() {
     this.registerForm=this.formBuilder.group({
       username:['',Validators.required],
-      id:[''],
-      empEmailId:['',[Validators.required,Validators.email]],
-      phoneno:['',Validators.required]
+      id:['',Validators.required],
+      email:['',[Validators.required,Validators.email]],
+      phoneno:['',Validators.required],
+      password:['',Validators.required],
+      confirmpassword:['',Validators.required]
     })
+  }
+  addUser()
+  {
+    this.userService.saveUser(this.registerForm.value).subscribe(data =>{
+      console.log('User Inserted Successfully');
+    });
   }
 
 }

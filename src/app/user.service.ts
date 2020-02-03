@@ -16,5 +16,18 @@ export class UserService {
   {
     return this.httpClient.get<User[]>(this.httpUrl);
   }
+  saveUser(user:User):Observable<User>{
+    return this.httpClient.post<User>(this.httpUrl,user);
+  }
+  deleteUser(id : number):Observable<User>{
+    return this.httpClient.delete<User>(this.httpUrl + id);
+  }
+  updateUserInfo(user:User):Observable<User>{
+    return this.httpClient.put<User>(this.httpUrl+user.id,user);
+  }
+  getUserById(id:number):Observable<User>{
+    return this.httpClient.get<User>(this.httpUrl+id);
+  }
+
   
 }

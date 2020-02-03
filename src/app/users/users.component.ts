@@ -17,5 +17,16 @@ users:User[];
       this.users=data;
     })
   }
+  deleteUser(id:number){
+    this.userService.deleteUser(id).subscribe();
+    this.users=this.users.filter(u => u.id!==id);
+  }
+  updateUser(user:User)
+  {
+    localStorage.removeItem('userId');
+    localStorage.setItem('userId',user.id.toString());
+    this.router.navigate(['update-user']);
+  }
+
 
 }

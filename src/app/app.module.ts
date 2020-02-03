@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     LoginComponent,
     UsersComponent,
-    HomeComponent
+    HomeComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
