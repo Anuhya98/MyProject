@@ -10,10 +10,10 @@ import { User } from '../models/user';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private userService:UserService , private router:Router) { }
+  constructor(private userService: UserService , private router: Router) { }
 users:User[];
   ngOnInit() {
-    this.userService.getALLUsers().subscribe(data => {
+    this.userService.getAllUsers().subscribe(data => {
       this.users=data;
     })
   }
